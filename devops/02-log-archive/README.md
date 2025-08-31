@@ -11,14 +11,22 @@ This project contains a script to archive logs efficiently. Follow the instructi
 
 2. Run the script with the following command:
    ```bash
-   ./script.sh <source_directory> <destination_directory>
+   ./script.sh [source_directory] [destination_directory]
    ```
-   Replace `<source_directory>` with the path to the directory containing the logs you want to archive, and `<destination_directory>` with the path to the directory where the archived logs should be stored.
+   Both arguments are optional. If not provided, the script will use the following default behavior:
+   - `source_directory`: Defaults to `/var/log`
+   - `destination_directory`: Defaults to `/var/log/archives`
 
    Example:
    ```bash
-   ./script.sh ../01-server-performance-stats ./arch
+   ./script.sh
    ```
+
+   Example with provided arguments:
+   ```bash
+   ./script.sh /home/user/logs /home/user/archives
+   ```
+   This will archive logs from `/home/user/logs` into `/home/user/archives`.
 
 ## Project Reference
 
