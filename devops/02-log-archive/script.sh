@@ -1,32 +1,32 @@
 #!/bin/bash 
 
+set -euo pipefail
+
+if [[ $# -gt 2 ]] ;then
+    echo "ERROR: Usage: $0 [logdir] [outdir]" >&2
+    exit 1
+fi
 
 logdir=${1:-/var/log}
 outdir=${2:-/var/log/archives}
 timestamp=$(date +"%Y%m%d_%H%M%S")
 archive_name="log_archives_$timestamp.tar.gz"
 
-if [[ $# -gt 2 ]] ;then
-    echo "ERROR: $0 can only takes 0 to 2 arguments" 
-    exit 1
-fi
-
 
 if [[ ! -d "$logdir" ]] ;then 
-    echo "ERROR: $logdir directory does not exist"
+    echo "ERROR: $logdir directory does not exist" >&2 
     exit 1
 fi 
 
 
-mkdir -p "$outdir"
+mkdir -p -- "$outdir" || { echo "ERROR: Cannot create output directory ($outdir)" >&2 ; exit 1 ; }
 
-tar -czvf  "${outdir}/${archive_name}" "${logdir}"
 
-if [[ $? -eq 0 ]];  then
+if tar -czf -- "${outdir}/${archive_name}" "${logdir}";  then
     echo "$(date +"%Y-%m-%d %H:%M:%S") -> $archive_name" >> "$outdir/archive_log.txt"
     echo  "Archive created:  $outdir/$archive_name"
 else 
-    echo "ERROR: error compressing logs"
+    echo "ERROR: error compressing logs" >&2
     exit 1
 fi
 
