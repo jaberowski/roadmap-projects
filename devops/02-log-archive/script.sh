@@ -22,7 +22,7 @@ fi
 mkdir -p -- "$outdir" || { echo "ERROR: Cannot create output directory ($outdir)" >&2 ; exit 1 ; }
 
 
-if tar -czf -- "${outdir}/${archive_name}" "${logdir}";  then
+if tar -czf -- "${outdir}/${archive_name}"  -C "${logdir}" . ;  then
     echo "$(date +"%Y-%m-%d %H:%M:%S") -> $archive_name" >> "$outdir/archive_log.txt"
     echo  "Archive created:  $outdir/$archive_name"
 else 
