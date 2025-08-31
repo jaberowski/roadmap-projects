@@ -7,8 +7,6 @@ Here are the projects I’ve worked on, following the DevOps Roadmap Projects:
 ✅ Completed Projects
 
 1. [Server Performance Stats](https://roadmap.sh/projects/server-stats)  
-  
-
-
+2. [Log Archive Tool](https://roadmap.sh/projects/log-archive-tool)
 
 Stay tuned for more updates as I progress through the roadmap! 🚀
