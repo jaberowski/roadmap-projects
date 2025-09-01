@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+
 
 LOG_FILE=${1:-./nginx-access.log}
 
