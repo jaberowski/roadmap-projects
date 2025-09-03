@@ -9,5 +9,6 @@ Here are the projects I’ve worked on, following the DevOps Roadmap Projects:
 1. [Server Performance Stats](https://roadmap.sh/projects/server-stats)  
 2. [Log Archive Tool](https://roadmap.sh/projects/log-archive-tool)  
 3. [Nginx Log Analyzer](https://roadmap.sh/projects/nginx-log-analyser)
+4. [SSH Remote Server Setup](https://roadmap.sh/projects/ssh-remote-server-setup)
 
 Stay tuned for more updates as I progress through the roadmap! 🚀
