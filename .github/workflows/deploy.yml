@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "devops/05-gh-deployment-workflow/index.html"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Check index.html exists
+        run: |
+          if [ -f "devops/05-gh-deployment-workflow/index.html" ]; then
+            echo "✅ index.html found"
+          else
+            echo "❌ index.html not found" 
+            exit 1
+          fi
+
+      - name: gh pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: "devops/05-gh-deployment-workflow"
