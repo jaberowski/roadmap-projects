@@ -23,9 +23,13 @@ jobs:
             exit 1
           fi
 
-      - name: gh pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Configure Pages (creates github-pages environment if needed)
+        uses: actions/configure-pages@v4
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
-          publish_dir: "devops/05-gh-deployment-workflow"
+          path: "devops/05-gh-deployment-workflow"
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
