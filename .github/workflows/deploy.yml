@@ -7,6 +7,10 @@ on:
     paths:
       - "devops/05-gh-deployment-workflow/index.html"
   workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
