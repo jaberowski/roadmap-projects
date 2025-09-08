@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "devops/05-gh-deployment-workflow/index.html"
+  workflow_dispatch:
 
 jobs:
   deploy:
