@@ -11,5 +11,6 @@ Here are the projects I’ve worked on, following the DevOps Roadmap Projects:
 3. [Nginx Log Analyzer](https://roadmap.sh/projects/nginx-log-analyser)
 4. [SSH Remote Server Setup](https://roadmap.sh/projects/ssh-remote-server-setup)
 5. [GitHub Pages Deployment Workflow](https://roadmap.sh/projects/github-actions-deployment-workflow)
+6. [Static Site Server](devops/06-static-site-server/README.md) - [Source](https://roadmap.sh/projects/static-site-server)
 
 Stay tuned for more updates as I progress through the roadmap! 🚀
